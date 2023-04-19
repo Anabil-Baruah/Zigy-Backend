@@ -3,11 +3,14 @@ const baseURL = "http://localhost:3000"   //base URL of the entire project
 const path = require('path')
 const fs = require('fs')
 
-//rendering the page and dispalying the videos
+//rendering the page and dispaly the videos
 async function renderPage(req, res, next) {
   try {
     const videos = await Video.find({})
     res.render('video', { baseURL, videos })
+    // or we can also do 
+    //res.json({video})
+
   } catch (error) {
     next(error);
   }
@@ -20,10 +23,10 @@ async function uploadVideo(req, res, next) {
     console.log(req.file)
     const filePath = req.file.path
     const newPath = filePath.replace('public\\', '');
-    console.log(newPath)
     const video = new Video({ videoUrl: newPath, filename: req.file.filename });
-    const savedVideo = await video.save();
-    res.json(savedVideo);
+    await video.save();
+    res.status(200).redirect(`${baseURL}/videos`)
+    // res.status(200).send("Video uploaded succesfully go back to previous page and refresh")
   } catch (error) {
     next(error);
   }
@@ -44,17 +47,19 @@ async function deleteVideo(req, res, next) {
     }
     fs.unlink(filePath, (err) => {
       if (err) {
-        console.error(err);
         return next(err);
       }
-      res.status(200).send('File deleted successfully');
+      res.status(200).redirect(`${baseURL}/videos`)
+      // or we can also do 
+      //res.status(200).send('video uploaded succesfully)
+
     });
   } catch (error) {
     next(error);
   }
 }
 
-//controller to dowmolad file
+//controller to downoladed file
 async function downloadFile(req, res, next) {
   try {
     var filename = req.params.filename;

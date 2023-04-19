@@ -3,6 +3,9 @@
 
 StreamX is a Node.js application that allows users to easily upload, stream, and download videos. With StreamX, users can upload their videos to the server, stream them online, download them for offline viewing, and even delete them if needed.
 
+# Screen shots
+
+![Home page](https://res.cloudinary.com/dudvqptv0/image/upload/v1681917117/zigy-assignment-SC_x8hmr4.png)
 
 ## Tech stack
 

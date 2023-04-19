@@ -13,7 +13,7 @@
 <body>
     <div class="container d-flex">
         <div class=" container col">
-            <h3 class="text-center">Upload files below</h3>
+            <h1 class="text-center m-3">Upload files below</h1>
             <form action="<%= baseURL%>/videos" method="POST" class="col" enctype="multipart/form-data">
 
                 <label for="video">Video:</label>
@@ -29,6 +29,11 @@
                         <h1>Videos</h1>
                         <div class="list-group">
                             <!-- Render videos using a loop -->
+                            <div class="container text-center" style="color: rgb(181, 181, 181); width: 100vw">
+                                <% if (videos.length === 0) { %>
+                                    <h2>No videos uploaded</h2>
+                                <% } %>  
+                            </div>
                             <% videos.forEach((video)=>{%>
 
                                 <h4 class="list-group-item-heading">
@@ -39,9 +44,9 @@
                                 </video>
                                 <div class="row">
                                     <a href="<%= baseURL%>/videos/delete/<%= video._id%>"
-                                        class="btn btn-danger w-25 mt-2">Delete</a>
+                                        class="btn btn-danger w-25 m-2">Delete</a>
                                     <a href="<%= baseURL%>/videos/download/<%= video.filename%>"
-                                        class="btn btn-primary w-25 mt-2">Download</a>
+                                        class="btn btn-primary w-25 m-2">Download</a>
                                 </div>
                                 <% })%>
                         </div>
