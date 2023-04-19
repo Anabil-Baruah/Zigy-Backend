@@ -5,7 +5,7 @@ StreamX is a Node.js application that allows users to easily upload, stream, and
 
 # Screen shots
 
-![Home page](https://res.cloudinary.com/dudvqptv0/image/upload/v1681917117/zigy-assignment-SC_x8hmr4.png)
+![Home page](https://res.cloudinary.com/dudvqptv0/image/upload/v1681918602/samples/zigy-assignment-SC_ydoowb.png)
 
 ## Tech stack
 
