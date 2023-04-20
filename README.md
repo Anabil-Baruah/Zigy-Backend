@@ -70,7 +70,7 @@ To run this project, you will need to add the following environment variables to
 To use this app, you'll need to have Node.js , npm and mongoDB installed on your machine.
 
 ```bash
-cd Zigy-Backend-
+cd Zigy-Backend
 ```
 Then install the node modules and all the dependencies by running -
 
