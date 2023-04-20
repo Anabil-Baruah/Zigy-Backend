@@ -2,6 +2,10 @@
 const express = require('express')
 const app = express()
 
+//require the cors module and use it to enable CORS for all routes
+const cors = require('cors')
+app.use(cors())
+
 require('dotenv').config()    //to store the confidential information and use them without disclosing them.
 
 //Database connection
